@@ -1,0 +1,17 @@
+#version 460 core
+
+in vec3 colour;
+in vec2 texCoords;
+in vec3 locFragment;
+in vec4 pos;
+
+/*layout (location = 0)*/ out vec3 fragColor;
+//layout (location = 1) out vec3 loc;
+
+uniform sampler2D sampler;
+
+void main() {
+	fragColor = texture(sampler, texCoords).xyz * /*dot(pos.xyz, vec3(0, 0, 1))**/colour;
+	//if (dot(pos.xyz, vec3(0, 0, 1)) < cos(60)) fragColor = vec3(0);
+	//loc = locFragment;
+}
