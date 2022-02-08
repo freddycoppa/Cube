@@ -214,7 +214,7 @@ void Renderer::setData(Cube::Side side, vec3 axis, float sine, float cosine) {
 Renderer::~Renderer() {
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
-	for (int i = 0; i < 6; i++) glDisableVertexAttribArray(i);
+	for (int i = 0; i < 8; i++) glDisableVertexAttribArray(i);
 	glDeleteBuffers(2, this->vbos);
 	glDeleteBuffers(1, &this->positions);
 	glDeleteBuffers(1, &this->axes);
